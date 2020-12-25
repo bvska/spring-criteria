@@ -19,32 +19,32 @@ public class TestController {
         this.authorRepository = authorRepository;
     }
 
-    // GET запрос, передача данных через ?first=value&second=value
+    // передача данных в строке запроса через ?first=value&second=value
     @GetMapping("/params")
     public void params(@RequestParam int first, @RequestParam int second){
         System.out.println("first " + first);
         System.out.println("second " + second);
     }
 
-    // GET запрос, передача данных через /{param}
+    // передача данных в строке запроса через /{param}
     @GetMapping("/{param}")
     public void param(@PathVariable String paramValue){
         System.out.println("paramValue " + paramValue);
     }
 
-    // POST запрос: получение строки json из тела сообщения
+    // передача данных в теле сообщения: получение строки json из тела сообщения
     @PostMapping("/json")
     public void json(@RequestBody String data){
         System.out.println("data " + data);
     }
 
-    // POST запрос: получение строки json из тела сообщения и генерация в объект
+    // передача данных в теле сообщения: получение строки json из тела сообщения и генерация в объект
     @PostMapping("/json/to/object")
     public void jsonToObject(@RequestBody Author author){
         System.out.println("author " + author);
     }
 
-    // POST запрос: получение параметров
+    // передача данных в теле сообщения: получение параметров
     @PostMapping("/many/params")
     public void manyParams(@RequestParam(value = "first") String first, @RequestParam(value = "second") int second){
         System.out.println("first: " + first);
