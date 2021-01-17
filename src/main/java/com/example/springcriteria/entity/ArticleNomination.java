@@ -1,6 +1,5 @@
 package com.example.springcriteria.entity;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
